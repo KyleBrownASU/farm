@@ -45,7 +45,7 @@ checkstyle {
 // Configure SpotBugs
 ///////////////////////////////////////////////////////////////////////
 // To generate an HTML report instead of XML
-spotbugsMain {
+stuffspotbugsMain {
      reports {
         xml.enabled = false
         html.enabled = true
