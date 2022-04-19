@@ -16,6 +16,7 @@ repositories {
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
+    implementation 'org.testng:testng:7.1.0'
     compile "junit:junit:4.12"
     compile files('cls/')
 }
@@ -45,6 +46,7 @@ checkstyle {
 // Configure SpotBugs
 ///////////////////////////////////////////////////////////////////////
 // To generate an HTML report instead of XML
+/*
 stuffspotbugsMain {
      reports {
         xml.enabled = false
@@ -56,4 +58,4 @@ stuffspotbugsMain {
     ignoreFailures = true
     showProgress = true
      effort = 'max'
- }
+ }*/
