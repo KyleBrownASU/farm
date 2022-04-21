@@ -90,4 +90,29 @@ public class FarmBuilderTest {
         assertEquals(100, farm.getBudget(),0);
         boolean upgrade  = farm.haveBudgetToUpgrade();
     }
+
+    @Test
+    public void farmersTest(){
+        Farm farm = farmFactory.buildFarm("Crop");
+
+        assertEquals(farm.getFarmers(),0);
+
+
+        farm.addFarmer(new CropFarmer());
+        assertEquals(farm.getFarmers(),1);
+
+        farm.setFarmer(5);
+        assertEquals(farm.getFarmers(),5);
+
+        farm.setFarmer(7);
+        assertEquals(farm.getFarmers(),7);
+
+        farm.setFarmer(3);
+        assertEquals(farm.getFarmers(),3);
+
+        farm.removeFarmer(2);
+        assertEquals(farm.getFarmers(),1);
+
+
+    }
 }

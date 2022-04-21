@@ -1,26 +1,22 @@
-// plugins {
-//     id "com.github.spotbugs" version "4.5.1"
-//     id "checkstyle"
-// }
+ plugins {
+     id "com.github.spotbugs" version "4.5.1"
+     id "checkstyle"
+ }
 
 apply plugin: 'application'
 apply plugin: 'jacoco'
-
-
 
 
 // In this section you declare where to find the dependencies of your project
 repositories {
     jcenter()
 }
-
 // In this section you declare the dependencies for your production and test code
 dependencies {
     implementation 'org.testng:testng:7.1.0'
     compile "junit:junit:4.12"
     compile files('cls/')
 }
-
 ///////////////////////////////////////////////////////////////////////
 // Configure Checkstyle
 /////////////////////////////////////////////////////////////////////
@@ -46,8 +42,8 @@ checkstyle {
 // Configure SpotBugs
 ///////////////////////////////////////////////////////////////////////
 // To generate an HTML report instead of XML
-/*
-stuffspotbugsMain {
+
+spotbugsMain {
      reports {
         xml.enabled = false
         html.enabled = true
@@ -58,4 +54,4 @@ stuffspotbugsMain {
     ignoreFailures = true
     showProgress = true
      effort = 'max'
- }*/
+ }

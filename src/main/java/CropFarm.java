@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 public class CropFarm implements Farm{
     String type = "Crop";
     Boolean day = true;
@@ -6,6 +8,7 @@ public class CropFarm implements Farm{
     double budget = 100;
     double upgradeCost = 100;
     double upgradeBuffer = .20; //in % ___ 20 = %20
+    LinkedList<Farmer> farmers = new LinkedList<>();
 
 
     @Override
@@ -98,4 +101,39 @@ public class CropFarm implements Farm{
 
     }
 
+    @Override
+    public void addFarmer(Farmer farmer) {
+        farmers.add(farmer);
+    }
+
+    @Override
+    public void setFarmer(int num) {
+        int difference = farmers.size() - num;
+
+        if(difference > 0){
+            while(farmers.size() != num){
+                farmers.remove();
+            }
+        } else {
+            while(farmers.size() != num){
+                farmers.add(new CropFarmer());
+            }
+        }
+    }
+
+    @Override
+    public void removeFarmer(int num) {
+        for (int i = 0; i < num;i++){
+            farmers.pop();
+        }
+    }
+
+    @Override
+    public int getFarmers() {
+        return farmers.size();
+    }
+
+
 }
+
+

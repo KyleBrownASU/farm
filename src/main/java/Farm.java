@@ -22,6 +22,11 @@ public interface Farm {
     boolean haveBudgetToUpgrade();
     void upgrade();
 
+    void addFarmer(Farmer farmer);
+    void setFarmer(int num);
+    void removeFarmer(int num);
+    int getFarmers();
+
 
 
 
