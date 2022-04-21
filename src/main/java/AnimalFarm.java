@@ -1,12 +1,21 @@
-public class Crop implements Farm{
-    String type = "Crop";
+public class AnimalFarm implements Farm {
+    String type = "Animal";
     Boolean day = true;
     Integer units = 1;
-
     double budget = 100;
     double upgradeCost = 100;
-    double upgradeBuffer = .20; //in % ___ 20 = %20
+    double upgradeBuffer = .20; //in % ___ .20 = %20
 
+
+    @Override
+    public void day() {
+
+    }
+
+    @Override
+    public void night() {
+
+    }
 
     @Override
     public int getUnit() {
@@ -21,16 +30,6 @@ public class Crop implements Farm{
     @Override
     public void setUnit(int units) {
         this.units = units;
-    }
-
-    @Override
-    public void day() {
-
-    }
-
-    @Override
-    public void night() {
-
     }
 
     @Override
@@ -86,7 +85,12 @@ public class Crop implements Farm{
 
     @Override
     public boolean haveBudgetToUpgrade() {
-        return (upgradeCost * upgradeBuffer) + upgradeCost >= budget;
+
+      if(( upgradeCost * upgradeBuffer) + upgradeCost < budget){
+          return true;
+      } else {
+          return false;
+      }
     }
 
     @Override
@@ -97,5 +101,6 @@ public class Crop implements Farm{
         upgradeCost += 50;
 
     }
+
 
 }

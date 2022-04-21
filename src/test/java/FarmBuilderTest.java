@@ -88,5 +88,6 @@ public class FarmBuilderTest {
         farm.upgrade();
 
         assertEquals(100, farm.getBudget(),0);
+        boolean upgrade  = farm.haveBudgetToUpgrade();
     }
 }

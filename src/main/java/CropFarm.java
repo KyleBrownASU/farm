@@ -1,5 +1,5 @@
-public class Hybrid implements Farm{
-    String type = "Hybrid";
+public class CropFarm implements Farm{
+    String type = "Crop";
     Boolean day = true;
     Integer units = 1;
 

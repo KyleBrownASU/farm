@@ -6,11 +6,11 @@ public class FarmFactory {
         }
 
         if(farmType.equalsIgnoreCase("Crop")){
-            return new Crop();
+            return new CropFarm();
         } else if (farmType.equalsIgnoreCase("Animal")){
-            return new Animal();
+            return new AnimalFarm();
         } else if(farmType.equalsIgnoreCase("Hybrid")){
-            return new Hybrid();
+            return new HybridFarm();
         }
 
         return null;

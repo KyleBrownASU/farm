@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class Ticker { //Mediator 
+public class Ticker { //Mediator
     LinkedList<Farm> farmList = new LinkedList<Farm>();
 
     public Ticker( LinkedList<Farm> farmList){
