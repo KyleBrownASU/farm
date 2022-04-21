@@ -8,11 +8,12 @@ public class SheepAnimalDecorator extends AnimalDecorator {
     @Override
     public void doSomething(){
         decoratedAnimal.doSomething();
+        setDecoratedCow(decoratedAnimal);
 
     }
 
 
-    private void setDecoratedCow(){
+    private void setDecoratedCow(Animal decoratedAnimal){
         System.out.println("Sheep");
     }
 }
