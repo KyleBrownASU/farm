@@ -1,7 +1,5 @@
-import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.Random;
-import java.util.Scanner;
 
 public class HelloWorld {
 
@@ -14,9 +12,6 @@ public class HelloWorld {
         newFarm.setFarmer(3);
         newFarm.setUnit(5);
         farmList.add(newFarm);
-
-        Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
-        String input = "Go";
 
         Ticker ticker = new Ticker(farmList);
         Random random = new Random();

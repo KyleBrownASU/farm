@@ -1,6 +1,5 @@
 import java.util.LinkedList;
 import java.util.Random;
-import java.util.Scanner;
 
 
 public class Ticker { //Mediator
@@ -37,13 +36,13 @@ public class Ticker { //Mediator
 
             FarmFactory farmFactory = new FarmFactory();
 
-            if(chance <= 3){
+            if(chance >= 3 && chance < 5){
                 Farm newFarm = farmFactory.buildFarm("Crop");
                 newFarm.setFarmer(3);
                 newFarm.setUnit(5);
                 farmList.add(newFarm);
 
-            } else if(chance <= 6){
+            } else if(chance >=  5){
                 Farm newFarm = farmFactory.buildFarm("Animal");
                 newFarm.setFarmer(3);
                 newFarm.setUnit(5);
@@ -67,9 +66,4 @@ public class Ticker { //Mediator
     }
 }
 
-class inputClass {
-    static Scanner in = new Scanner(System.in);
-
-
-}
 
