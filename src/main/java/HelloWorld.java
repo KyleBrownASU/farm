@@ -18,7 +18,7 @@ public class HelloWorld {
         int chance = random.nextInt(10 - 1 + 1) + 1;
 
         System.out.println("Simualtion ran on random data ");
-        while(chance ==5){
+        while(chance !=5){
             ticker.doDay();
 
             ticker.doNight();

@@ -57,7 +57,7 @@ public class CropFarm implements Farm{
         if(chance == 3){
             System.out.println("Oh no. A field has become diseased, do you want treat it (Y/N) ");
 
-
+            chance = random.nextInt(10 - 1 + 1) + 1;
 
 
             if(chance < 6){

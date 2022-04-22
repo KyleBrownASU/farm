@@ -61,7 +61,7 @@ public class HybridFarm implements Farm{
         if(chance == 3){
             System.out.println("Oh no. A field has become diseased, do you want treat it (Y/N) ");
 
-
+            chance = random.nextInt(10 - 1 + 1) + 1;
 
             if(chance <5){
                 System.out.println("Nice! You saved it!");
