@@ -1,3 +1,4 @@
+import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.Random;
 import java.util.Scanner;
@@ -62,7 +63,7 @@ public class HybridFarm implements Farm{
         if(chance == 3){
             System.out.println("Oh no. A field has become diseased, do you want treat it (Y/N) ");
 
-            Scanner scanner = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
             String choice = scanner.next();
 
             if(choice.equalsIgnoreCase("y")){

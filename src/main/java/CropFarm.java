@@ -1,3 +1,4 @@
+import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.Random;
 import java.util.Scanner;
@@ -51,13 +52,14 @@ public class CropFarm implements Farm{
 
     @Override
     public void night() {
+        Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
         Random random = new Random();
         int chance = random.nextInt(10 - 1 + 1) + 1;
 
         if(chance == 3){
             System.out.println("Oh no. A field has become diseased, do you want treat it (Y/N) ");
 
-            Scanner scanner = new Scanner(System.in);
+
             String choice = scanner.next();
 
             if(choice.equalsIgnoreCase("y")){
