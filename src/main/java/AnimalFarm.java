@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.Random;
 
 public class AnimalFarm implements Farm {
     String type = "Animal";
@@ -9,14 +10,46 @@ public class AnimalFarm implements Farm {
     double upgradeBuffer = .20; //in % ___ .20 = %20
     LinkedList<Farmer> farmers = new LinkedList<Farmer>();
 
+    int days = 1;
+
+    Random random = new Random();
+
 
     @Override
     public void day() {
+        int chance = random.nextInt(10 - 1 + 1) + 1;
+
+        if(days == 2 ){
+            System.out.println("Animals were harvested");
+            days= 1;
+            budget += (units * farmers.size() * 2 + 75);
+        }
+
+        budget += farmers.size() * units + 75;
+        System.out.println("This farm earned " + farmers.size() * units + 75 + " for a total of " + budget);
+
+        System.out.println("This Animal farm has " + units);
+
+        if( chance >=2 && chance <4){
+            System.out.println("Some animals where born");
+            units += 1;
+        }
+
 
     }
 
     @Override
     public void night() {
+        int chance = random.nextInt(10 - 1 + 1) + 1;
+        if(chance == 3){
+            System.out.println("A fox ate an animal");
+            units -=1;
+        } else if( chance == 4){
+            System.out.println("A wolf ate an animal ");
+            units -= 1;
+        }
+
+
 
     }
 
@@ -99,7 +132,7 @@ public class AnimalFarm implements Farm {
     @Override
     public void upgrade() {
         budget = budget - upgradeCost;
-        units++;
+        units+= 1;
 
         upgradeCost += 50;
 

@@ -1,4 +1,6 @@
 import java.util.LinkedList;
+import java.util.Random;
+import java.util.Scanner;
 
 public class HybridFarm implements Farm{
     String type = "Hybrid";
@@ -10,6 +12,9 @@ public class HybridFarm implements Farm{
     double upgradeBuffer = .20; //in % ___ 20 = %20
 
     LinkedList<Farmer> farmers = new LinkedList<>();
+
+    int days = 1;
+    int days2 = 1;
 
 
     @Override
@@ -29,12 +34,59 @@ public class HybridFarm implements Farm{
 
     @Override
     public void day() {
+        budget += farmers.size() * units + 75;
+
+        if(days == 3){
+            System.out.println("Crops where harvested today");
+            days = 1;
+            budget += (units * farmers.size() * 2 + 75);
+        }
+
+        if(days2 == 2 ){
+            System.out.println("Animals were harvested");
+            days2= 1;
+            budget += (units * farmers.size() * 2 + 75);
+        }
+        units += 1;
+        System.out.println("This farm earned " + farmers.size() * units + 75 + " for a total of " + budget);
+
+        System.out.println("This Hybrid farm has " + units);
 
     }
 
     @Override
     public void night() {
+        Random random = new Random();
+        int chance = random.nextInt(10 - 1 + 1) + 1;
 
+        if(chance == 3){
+            System.out.println("Oh no. A field has become diseased, do you want treat it (Y/N) ");
+
+            Scanner scanner = new Scanner(System.in);
+            String choice = scanner.next();
+
+            if(choice.equalsIgnoreCase("y")){
+                System.out.println("Nice! You saved it!");
+            } else {
+                System.out.println("It died ");
+                units -= 1;
+            }
+        } else if (chance ==4){
+            System.out.println("Oh no. Rabbits eat the crop");
+            units -= 1;
+        } else if (chance == 5){
+            System.out.println("oh no. the moles tore up the soil");
+            units -= 1;
+        }
+
+
+        if(chance == 2){
+            System.out.println("A fox ate an animal");
+            units -=1;
+        } else if( chance == 1){
+            System.out.println("A wolf ate an animal ");
+            units -= 1;
+        }
     }
 
     @Override
@@ -96,7 +148,7 @@ public class HybridFarm implements Farm{
     @Override
     public void upgrade() {
         budget = budget - upgradeCost;
-        units++;
+        units+= 1;
 
         upgradeCost += 50;
 
