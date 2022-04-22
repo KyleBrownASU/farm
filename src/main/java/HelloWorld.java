@@ -1,5 +1,6 @@
 import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class HelloWorld {
@@ -18,14 +19,19 @@ public class HelloWorld {
         String input = "Go";
 
         Ticker ticker = new Ticker(farmList);
+        Random random = new Random();
+        int chance = random.nextInt(10 - 1 + 1) + 1;
 
-        while(!input.equalsIgnoreCase("Y")){
+        System.out.println("Simualtion ran on random data ");
+        while(chance ==5){
             ticker.doDay();
 
             ticker.doNight();
 
             System.out.println("Do want to quit (Y/N)");
-            input = scanner.next();
+
+            chance = random.nextInt(10 - 1 + 1) + 1;
+
         }
 
     }
