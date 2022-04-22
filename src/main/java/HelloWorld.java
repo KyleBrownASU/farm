@@ -1,16 +1,18 @@
-public class HelloWorld {
-    public static void main(String[] args) {
+import java.util.LinkedList;
 
+public class HelloWorld {
+
+
+    public static void main(String[] args) {
+        LinkedList<Farm> farmList = new LinkedList();
 
         FarmFactory farmFactory = new FarmFactory();
+        Farm newFarm = farmFactory.buildFarm("Animal");
+        newFarm.setFarmer(3);
+        newFarm.setUnit(5);
+        farmList.add(newFarm);
 
-        Farm farm1 = farmFactory.buildFarm("Crop");
-        System.out.println(farm1.getType());
 
-        Farm farm2 = farmFactory.buildFarm("Animal");
-        System.out.println(farm2.getType());
 
-        Farm farm3 = farmFactory.buildFarm("Hybrid");
-        System.out.println(farm3.getType());
     }
 }
