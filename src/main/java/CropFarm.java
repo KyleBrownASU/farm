@@ -1,7 +1,5 @@
-import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.Random;
-import java.util.Scanner;
 
 public class CropFarm implements Farm{
     String type = "Crop";
@@ -52,7 +50,7 @@ public class CropFarm implements Farm{
 
     @Override
     public void night() {
-        Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
+
         Random random = new Random();
         int chance = random.nextInt(10 - 1 + 1) + 1;
 
@@ -60,9 +58,9 @@ public class CropFarm implements Farm{
             System.out.println("Oh no. A field has become diseased, do you want treat it (Y/N) ");
 
 
-            String choice = scanner.next();
 
-            if(choice.equalsIgnoreCase("y")){
+
+            if(chance < 6){
                 System.out.println("Nice! You saved it!");
             } else {
                 System.out.println("It died ");
